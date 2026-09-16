@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Dog" msprop:Generator_RowEvHandlerName="DogRowChangeEventHandler" msprop:Generator_RowDeletedName="DogRowDeleted" msprop:Generator_RowDeletingName="DogRowDeleting" msprop:Generator_RowEvArgName="DogRowChangeEvent" msprop:Generator_TablePropName="Dog" msprop:Generator_RowChangedName="DogRowChanged" msprop:Generator_RowChangingName="DogRowChanging" msprop:Generator_TableClassName="DogDataTable" msprop:Generator_RowClassName="DogRow" msprop:Generator_TableVarName="tableDog" msprop:Generator_UserTableName="Dog">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Chip_ID" msdata:Caption="ID Чипа" msprop:Generator_ColumnPropNameInRow="Chip_ID" msprop:Generator_ColumnPropNameInTable="Chip_IDColumn" msprop:Generator_ColumnVarNameInTable="columnChip_ID" msprop:Generator_UserColumnName="Chip_ID" type="xs:string" />
+              <xs:element name="Name" msdata:Caption="Кличка" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Breed" msdata:Caption="Порода" msprop:Generator_ColumnPropNameInRow="Breed" msprop:Generator_ColumnPropNameInTable="BreedColumn" msprop:Generator_ColumnVarNameInTable="columnBreed" msprop:Generator_UserColumnName="Breed" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrainingSession" msprop:Generator_RowEvHandlerName="TrainingSessionRowChangeEventHandler" msprop:Generator_RowDeletedName="TrainingSessionRowDeleted" msprop:Generator_RowDeletingName="TrainingSessionRowDeleting" msprop:Generator_RowEvArgName="TrainingSessionRowChangeEvent" msprop:Generator_TablePropName="TrainingSession" msprop:Generator_RowChangedName="TrainingSessionRowChanged" msprop:Generator_RowChangingName="TrainingSessionRowChanging" msprop:Generator_TableClassName="TrainingSessionDataTable" msprop:Generator_RowClassName="TrainingSessionRow" msprop:Generator_TableVarName="tableTrainingSession" msprop:Generator_UserTableName="TrainingSession">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Training_ID" msdata:Caption="ID Тренировки" msprop:Generator_ColumnPropNameInRow="Training_ID" msprop:Generator_ColumnPropNameInTable="Training_IDColumn" msprop:Generator_ColumnVarNameInTable="columnTraining_ID" msprop:Generator_UserColumnName="Training_ID" type="xs:int" />
+              <xs:element name="FK_Chip_ID" msdata:Caption="ID Чипа" msprop:Generator_ColumnPropNameInRow="FK_Chip_ID" msprop:Generator_ColumnPropNameInTable="FK_Chip_IDColumn" msprop:Generator_ColumnVarNameInTable="columnFK_Chip_ID" msprop:Generator_UserColumnName="FK_Chip_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Instructor" msdata:Caption="Инструктор" msprop:Generator_ColumnPropNameInRow="Instructor" msprop:Generator_ColumnPropNameInTable="InstructorColumn" msprop:Generator_ColumnVarNameInTable="columnInstructor" msprop:Generator_UserColumnName="Instructor" type="xs:string" minOccurs="0" />
+              <xs:element name="SessionType" msdata:Caption="Вид занятия" msprop:Generator_ColumnPropNameInRow="SessionType" msprop:Generator_ColumnPropNameInTable="SessionTypeColumn" msprop:Generator_ColumnVarNameInTable="columnSessionType" msprop:Generator_UserColumnName="SessionType" type="xs:string" minOccurs="0" />
+              <xs:element name="DurationMinutes" msdata:Caption="Длительность (минуты)" msprop:Generator_ColumnPropNameInRow="DurationMinutes" msprop:Generator_ColumnPropNameInTable="DurationMinutesColumn" msprop:Generator_ColumnVarNameInTable="columnDurationMinutes" msprop:Generator_UserColumnName="DurationMinutes" type="xs:int" minOccurs="0" />
+              <xs:element name="Cost" msdata:Caption="Оплата" msprop:Generator_ColumnPropNameInRow="Cost" msprop:Generator_ColumnPropNameInTable="CostColumn" msprop:Generator_ColumnVarNameInTable="columnCost" msprop:Generator_UserColumnName="Cost" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="DogKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Dog" />
+      <xs:field xpath="mstns:Chip_ID" />
+    </xs:unique>
+    <xs:unique name="TrainingSessionKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TrainingSession" />
+      <xs:field xpath="mstns:Training_ID" />
+    </xs:unique>
+    <xs:unique name="TrainingSessionKey2">
+      <xs:selector xpath=".//mstns:TrainingSession" />
+      <xs:field xpath="mstns:Training_ID" />
+      <xs:field xpath="mstns:FK_Chip_ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Dog_TrainingSession" msdata:parent="Dog" msdata:child="TrainingSession" msdata:parentkey="Chip_ID" msdata:childkey="FK_Chip_ID" msprop:Generator_UserParentTable="Dog" msprop:Generator_UserChildTable="TrainingSession" msprop:Generator_RelationVarName="relationDog_TrainingSession" msprop:Generator_ChildPropName="GetTrainingSessionRows" msprop:Generator_ParentPropName="DogRow" msprop:Generator_UserRelationName="Dog_TrainingSession" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

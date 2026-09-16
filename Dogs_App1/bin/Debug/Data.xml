@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="yes"?>
+<DataSet1 xmlns="http://tempuri.org/DataSet1.xsd">
+  <Dog>
+    <Chip_ID>23</Chip_ID>
+    <Name>Арчи</Name>
+    <Breed>Колли</Breed>
+  </Dog>
+</DataSet1>
