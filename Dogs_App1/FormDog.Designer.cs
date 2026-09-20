@@ -40,9 +40,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(445, 323);
+            this.btnSave.Location = new System.Drawing.Point(183, 258);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 59);
+            this.btnSave.Size = new System.Drawing.Size(124, 47);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(231, 323);
+            this.btnCancel.Location = new System.Drawing.Point(372, 258);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(140, 59);
+            this.btnCancel.Size = new System.Drawing.Size(124, 47);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Отменить";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -61,9 +63,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 79);
+            this.label1.Location = new System.Drawing.Point(71, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.Size = new System.Drawing.Size(130, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Номер чипа собаки:";
             this.label1.UseCompatibleTextRendering = true;
@@ -71,9 +73,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 152);
+            this.label2.Location = new System.Drawing.Point(104, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 24);
+            this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Кличка собаки:";
             this.label2.UseCompatibleTextRendering = true;
@@ -81,42 +83,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 223);
+            this.label3.Location = new System.Drawing.Point(101, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 24);
+            this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Порода собаки:";
             this.label3.UseCompatibleTextRendering = true;
             // 
             // txtChipID
             // 
-            this.txtChipID.Location = new System.Drawing.Point(297, 67);
+            this.txtChipID.Location = new System.Drawing.Point(264, 54);
+            this.txtChipID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChipID.Multiline = true;
             this.txtChipID.Name = "txtChipID";
-            this.txtChipID.Size = new System.Drawing.Size(331, 35);
+            this.txtChipID.Size = new System.Drawing.Size(295, 29);
             this.txtChipID.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(297, 136);
+            this.txtName.Location = new System.Drawing.Point(264, 109);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(331, 35);
+            this.txtName.Size = new System.Drawing.Size(295, 29);
             this.txtName.TabIndex = 7;
             // 
             // txtBreed
             // 
-            this.txtBreed.Location = new System.Drawing.Point(297, 217);
+            this.txtBreed.Location = new System.Drawing.Point(264, 174);
+            this.txtBreed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBreed.Multiline = true;
             this.txtBreed.Name = "txtBreed";
-            this.txtBreed.Size = new System.Drawing.Size(331, 35);
+            this.txtBreed.Size = new System.Drawing.Size(295, 29);
             this.txtBreed.TabIndex = 8;
             // 
             // FormDog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.txtBreed);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtChipID);
@@ -125,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDog";
             this.Text = "FormDog";
             this.Load += new System.EventHandler(this.FormDog_Load);

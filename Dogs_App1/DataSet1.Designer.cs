@@ -740,10 +740,10 @@ namespace Dogs_App1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TrainingSessionRow AddTrainingSessionRow(int Training_ID, DogRow parentDogRowByDog_TrainingSession, string Instructor, string SessionType, int DurationMinutes, decimal Cost) {
+            public TrainingSessionRow AddTrainingSessionRow(DogRow parentDogRowByDog_TrainingSession, string Instructor, string SessionType, int DurationMinutes, decimal Cost) {
                 TrainingSessionRow rowTrainingSessionRow = ((TrainingSessionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Training_ID,
+                        null,
                         null,
                         Instructor,
                         SessionType,
@@ -809,6 +809,8 @@ namespace Dogs_App1 {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("TrainingSessionKey2", new global::System.Data.DataColumn[] {
                                 this.columnTraining_ID,
                                 this.columnFK_Chip_ID}, false));
+                this.columnTraining_ID.AutoIncrement = true;
+                this.columnTraining_ID.AutoIncrementSeed = 1;
                 this.columnTraining_ID.AllowDBNull = false;
                 this.columnTraining_ID.Unique = true;
                 this.columnTraining_ID.Caption = "ID Тренировки";

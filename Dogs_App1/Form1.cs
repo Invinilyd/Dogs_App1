@@ -84,16 +84,23 @@ namespace Dogs_App1
         {
             if (dataGridView1.CurrentRow != null)
             {
-                string chipId = dataGridView1.CurrentRow.Cells["Chip_ID"].Value.ToString();
-                // Если твоя FormDog умеет принимать ID для редактирования, раскомментируй строку ниже:
-                // FormDog form = new FormDog(dataSet1, false, chipId);
-                // if (form.ShowDialog() == DialogResult.OK) SaveToXML();
+                // Получаем строку данных через DataBoundItem (надёжнее!)
+                DataRowView rowView = dataGridView1.CurrentRow.DataBoundItem as DataRowView;
+                if (rowView != null)
+                {
+                    string chipId = rowView.Row["Chip_ID"].ToString();
 
-                MessageBox.Show("Редактирование собаки (требуется доработка FormDog для передачи chipId).");
+                    // Открываем FormDog в режиме редактирования
+                    FormDog form = new FormDog(dataSet1, false, chipId);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        SaveToXML();
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Выберите собаку для редактирования.");
+                MessageBox.Show("Выберите собаку для редактирования.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -105,17 +112,29 @@ namespace Dogs_App1
                 if (MessageBox.Show("Вы уверены? Это также удалит все связанные тренировки этой собаки.",
                     "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    // Получаем Chip_ID через DataBoundItem
                     DataRowView rowView = dataGridView1.CurrentRow.DataBoundItem as DataRowView;
                     if (rowView != null)
                     {
+                        string chipId = rowView.Row["Chip_ID"].ToString();
+
+                        // Сначала удаляем все тренировки этой собаки
+                        DataRow[] relatedTrainings = dataSet1.TrainingSession.Select($"FK_Chip_ID = '{chipId}'");
+                        foreach (DataRow training in relatedTrainings)
+                        {
+                            training.Delete();
+                        }
+
+                        // Затем удаляем саму собаку
                         rowView.Row.Delete();
                     }
+
                     SaveToXML();
                 }
             }
             else
             {
-                MessageBox.Show("Выберите собаку для удаления.");
+                MessageBox.Show("Выберите собаку для удаления.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -124,14 +143,62 @@ namespace Dogs_App1
         // Кнопка 4: Создать запись о тренировке
         private void button4_Click(object sender, EventArgs e)
         {
-            // Здесь мы позже вызовем новую форму FormTraining
-            MessageBox.Show("Здесь будет открываться форма добавления тренировки (FormTraining).");
+            // Проверяем, есть ли собаки, иначе нечего тренировать
+            if (dataSet1.Dog.Rows.Count == 0)
+            {
+                MessageBox.Show("Сначала добавьте хотя бы одну собаку!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Открываем форму добавления тренировки (false = режим добавления)
+            FormTraining form = new FormTraining(dataSet1, false);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                SaveToXML(); // Сохраняем, если пользователь нажал "Сохранить"
+            }
         }
+
 
         // Кнопка 5: Редактировать запись о тренировке
         private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Здесь будет открываться форма редактирования тренировки.");
+            if (dataGridView2.CurrentRow != null)
+            {
+                try
+                {
+                    // Получаем строку данных надёжным способом
+                    DataRowView rowView = dataGridView2.CurrentRow.DataBoundItem as DataRowView;
+                    if (rowView != null)
+                    {
+                        int trainingId = -1;
+
+                        // Ищем столбец с ID тренировки (пробуем разные варианты названий)
+                        if (rowView.Row.Table.Columns.Contains("Training_ID"))
+                            trainingId = Convert.ToInt32(rowView.Row["Training_ID"]);
+                        else if (rowView.Row.Table.Columns.Contains("TrainingID"))
+                            trainingId = Convert.ToInt32(rowView.Row["TrainingID"]);
+                        else if (rowView.Row.Table.Columns.Contains("ID"))
+                            trainingId = Convert.ToInt32(rowView.Row["ID"]);
+                        else
+                            trainingId = Convert.ToInt32(rowView.Row[0]); // Берём самый первый столбец
+
+                        // Открываем форму редактирования
+                        FormTraining form = new FormTraining(dataSet1, true, trainingId);
+                        if (form.ShowDialog() == DialogResult.OK)
+                        {
+                            SaveToXML();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при редактировании: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите тренировку для редактирования.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         // Кнопка 6: Удалить запись о тренировке
