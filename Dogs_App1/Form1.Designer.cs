@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataSet1 = new Dogs_App1.DataSet1();
-            this.dogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.breedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trainingSessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Dogs_App1.DataSet1();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.trainingIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKChipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sessionTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationMinutesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trainingSessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,9 +50,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trainingSessionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,39 +75,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(515, 142);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.trainingIDDataGridViewTextBoxColumn,
-            this.fKChipIDDataGridViewTextBoxColumn,
-            this.instructorDataGridViewTextBoxColumn,
-            this.sessionTypeDataGridViewTextBoxColumn,
-            this.durationMinutesDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.trainingSessionBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(180, 251);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(972, 163);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dogBindingSource
-            // 
-            this.dogBindingSource.DataMember = "Dog";
-            this.dogBindingSource.DataSource = this.dataSet1;
             // 
             // chipIDDataGridViewTextBoxColumn
             // 
@@ -133,10 +100,39 @@
             this.breedDataGridViewTextBoxColumn.Name = "breedDataGridViewTextBoxColumn";
             this.breedDataGridViewTextBoxColumn.Width = 150;
             // 
-            // trainingSessionBindingSource
+            // dogBindingSource
             // 
-            this.trainingSessionBindingSource.DataMember = "TrainingSession";
-            this.trainingSessionBindingSource.DataSource = this.dataSet1;
+            this.dogBindingSource.DataMember = "Dog";
+            this.dogBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.trainingIDDataGridViewTextBoxColumn,
+            this.fKChipIDDataGridViewTextBoxColumn,
+            this.instructorDataGridViewTextBoxColumn,
+            this.sessionTypeDataGridViewTextBoxColumn,
+            this.durationMinutesDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.trainingSessionBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(180, 251);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(972, 163);
+            this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // trainingIDDataGridViewTextBoxColumn
             // 
@@ -185,6 +181,11 @@
             this.costDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             this.costDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // trainingSessionBindingSource
+            // 
+            this.trainingSessionBindingSource.DataMember = "TrainingSession";
+            this.trainingSessionBindingSource.DataSource = this.dataSet1;
             // 
             // button1
             // 
@@ -243,7 +244,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 534);
             this.Controls.Add(this.button6);
@@ -257,10 +258,12 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trainingSessionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
