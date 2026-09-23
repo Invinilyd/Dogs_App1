@@ -9,3 +9,16 @@ C:\Users\Рената\Desktop\DOGS\Dogs_App1\obj\Debug\Dogs_App1.csproj.CoreComp
 C:\Users\Рената\Desktop\DOGS\Dogs_App1\obj\Debug\Dogs_App1.exe
 C:\Users\Рената\Desktop\DOGS\Dogs_App1\obj\Debug\Dogs_App1.pdb
 C:\Users\Рената\Desktop\DOGS\Dogs_App1\obj\Debug\Dogs_App1.FormDog.resources
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\bin\Debug\Dogs_App1.exe.config
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\bin\Debug\Dogs_App1.exe
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\bin\Debug\Dogs_App1.pdb
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.csproj.AssemblyReference.cache
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.exe.config
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.Form1.resources
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.FormDog.resources
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.FormTraining.resources
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.Properties.Resources.resources
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.csproj.GenerateResource.cache
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.csproj.CoreCompileInputs.cache
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.exe
+C:\Users\Рената\Source\Repos\Dogs_App1\Dogs_App1\obj\Debug\Dogs_App1.pdb

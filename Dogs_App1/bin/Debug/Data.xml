@@ -1,8 +1,50 @@
 <?xml version="1.0" standalone="yes"?>
 <DataSet1 xmlns="http://tempuri.org/DataSet1.xsd">
-  <Dog>
-    <Chip_ID>23</Chip_ID>
-    <Name>Арчи</Name>
-    <Breed>Колли</Breed>
-  </Dog>
+  <xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Dog">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Chip_ID" msdata:Caption="ID Чипа" type="xs:string" />
+                <xs:element name="Name" msdata:Caption="Кличка" type="xs:string" minOccurs="0" />
+                <xs:element name="Breed" msdata:Caption="Порода" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TrainingSession">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Training_ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:Caption="ID Тренировки" type="xs:int" />
+                <xs:element name="FK_Chip_ID" msdata:Caption="ID Чипа" type="xs:string" minOccurs="0" />
+                <xs:element name="Instructor" msdata:Caption="Инструктор" type="xs:string" minOccurs="0" />
+                <xs:element name="SessionType" msdata:Caption="Вид занятия" type="xs:string" minOccurs="0" />
+                <xs:element name="DurationMinutes" msdata:Caption="Длительность (минуты)" type="xs:int" minOccurs="0" />
+                <xs:element name="Cost" msdata:Caption="Оплата" type="xs:decimal" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="DogKey1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Dog" />
+        <xs:field xpath="mstns:Chip_ID" />
+      </xs:unique>
+      <xs:unique name="TrainingSessionKey1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:TrainingSession" />
+        <xs:field xpath="mstns:Training_ID" />
+      </xs:unique>
+      <xs:unique name="TrainingSessionKey2">
+        <xs:selector xpath=".//mstns:TrainingSession" />
+        <xs:field xpath="mstns:Training_ID" />
+        <xs:field xpath="mstns:FK_Chip_ID" />
+      </xs:unique>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="Dog_TrainingSession" msdata:parent="Dog" msdata:child="TrainingSession" msdata:parentkey="Chip_ID" msdata:childkey="FK_Chip_ID" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
 </DataSet1>

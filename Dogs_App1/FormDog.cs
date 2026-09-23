@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Dogs_App1
@@ -10,6 +11,16 @@ namespace Dogs_App1
         private DataSet1 dataSet1;
         private bool isNew;
         private string editChipId;
+
+        // Кличка: разрешаем русские и латинские буквы + дефис
+        private static readonly Regex NameInputRegex = new Regex(@"^[a-zA-Zа-яА-ЯёЁ\-]$");
+        // Кличка: полная проверка — с большой буквы, дальше буквы/дефис
+        private static readonly Regex NameFullRegex = new Regex(@"^[A-ZА-ЯЁ][a-zA-Zа-яёА-ЯЁ\-]*$");
+
+        // Порода: буквы, дефис и пробел (порода может состоять из нескольких слов)
+        private static readonly Regex BreedInputRegex = new Regex(@"^[a-zA-Zа-яА-ЯёЁ\-\s]$");
+        // Порода: полная проверка — каждое слово с заглавной буквы, буквы/дефис между
+        private static readonly Regex BreedFullRegex = new Regex(@"^[A-ZА-ЯЁ][a-zA-Zа-яёА-ЯЁ\-]*(\s[A-ZА-ЯЁ][a-zA-Zа-яёА-ЯЁ\-]*)*$");
 
         public FormDog(DataSet1 ds, bool isNew, string editChipId = "")
         {
@@ -46,11 +57,129 @@ namespace Dogs_App1
             }
         }
 
+        // ===== Валидация поля "Кличка" =====
+
+        // Разрешаем только буквы, дефис и Backspace; цифры и всё остальное — блокируем
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar)) // Backspace, Delete и т.п.
+                return;
+
+            if (!NameInputRegex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Первый символ поля не может быть дефисом
+            if (txtName.SelectionStart == 0 && e.KeyChar == '-')
+            {
+                e.Handled = true;
+            }
+        }
+
+        // Автоматически делаем первую букву заглавной по мере ввода
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtName.Text))
+                return;
+
+            if (char.IsLower(txtName.Text[0]))
+            {
+                int pos = txtName.SelectionStart;
+                txtName.Text = char.ToUpper(txtName.Text[0]) + txtName.Text.Substring(1);
+                txtName.SelectionStart = pos;
+            }
+        }
+
+        // ===== Валидация поля "Порода" =====
+
+        // Разрешаем только буквы, дефис, пробел и Backspace
+        private void txtBreed_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar)) // Backspace, Delete и т.п.
+                return;
+
+            if (!BreedInputRegex.IsMatch(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Нельзя, чтобы первым символом были пробел или дефис
+            if (txtBreed.SelectionStart == 0 && (e.KeyChar == '-' || e.KeyChar == ' '))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Запрещаем два пробела подряд
+            if (e.KeyChar == ' ' && txtBreed.SelectionStart > 0 &&
+                txtBreed.Text[txtBreed.SelectionStart - 1] == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        // Автоматическая капитализация первой буквы каждого слова
+        private void txtBreed_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBreed.Text))
+                return;
+
+            int pos = txtBreed.SelectionStart;
+            string text = txtBreed.Text;
+            bool capitalizeNext = true;
+            char[] chars = text.ToCharArray();
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (chars[i] == ' ')
+                {
+                    capitalizeNext = true;
+                    continue;
+                }
+
+                if (capitalizeNext && char.IsLower(chars[i]))
+                {
+                    chars[i] = char.ToUpper(chars[i]);
+                }
+                capitalizeNext = false;
+            }
+
+            string newText = new string(chars);
+            if (newText != text)
+            {
+                txtBreed.Text = newText;
+                txtBreed.SelectionStart = pos;
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtChipID.Text) || string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Заполните обязательные поля (Чип ID и Кличка)!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Финальная проверка клички (на случай вставки текста из буфера обмена)
+            if (!NameFullRegex.IsMatch(txtName.Text.Trim()))
+            {
+                MessageBox.Show(
+                    "Кличка должна начинаться с заглавной буквы и содержать только буквы и дефис (без цифр и других символов)!",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }
+
+            // Финальная проверка породы (необязательное поле, но если заполнено — должно быть валидным)
+            if (!string.IsNullOrWhiteSpace(txtBreed.Text) && !BreedFullRegex.IsMatch(txtBreed.Text.Trim()))
+            {
+                MessageBox.Show(
+                    "Порода должна содержать только буквы, пробелы и дефис, каждое слово — с заглавной буквы!",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBreed.Focus();
                 return;
             }
 
