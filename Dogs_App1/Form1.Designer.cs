@@ -30,9 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.breedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Dogs_App1.DataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.trainingIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKChipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationMinutesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trainingSessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,15 +49,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.chipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.breedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trainingIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fKChipIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessionTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durationMinutesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -75,6 +75,30 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(515, 142);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // chipIDDataGridViewTextBoxColumn
+            // 
+            this.chipIDDataGridViewTextBoxColumn.DataPropertyName = "Chip_ID";
+            this.chipIDDataGridViewTextBoxColumn.HeaderText = "ЧипID";
+            this.chipIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.chipIDDataGridViewTextBoxColumn.Name = "chipIDDataGridViewTextBoxColumn";
+            this.chipIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Кличка";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // breedDataGridViewTextBoxColumn
+            // 
+            this.breedDataGridViewTextBoxColumn.DataPropertyName = "Breed";
+            this.breedDataGridViewTextBoxColumn.HeaderText = "Порода";
+            this.breedDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.breedDataGridViewTextBoxColumn.Name = "breedDataGridViewTextBoxColumn";
+            this.breedDataGridViewTextBoxColumn.Width = 150;
             // 
             // dogBindingSource
             // 
@@ -109,6 +133,54 @@
             this.dataGridView2.Size = new System.Drawing.Size(964, 163);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // trainingIDDataGridViewTextBoxColumn
+            // 
+            this.trainingIDDataGridViewTextBoxColumn.DataPropertyName = "Training_ID";
+            this.trainingIDDataGridViewTextBoxColumn.HeaderText = "IDТренировки";
+            this.trainingIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.trainingIDDataGridViewTextBoxColumn.Name = "trainingIDDataGridViewTextBoxColumn";
+            this.trainingIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fKChipIDDataGridViewTextBoxColumn
+            // 
+            this.fKChipIDDataGridViewTextBoxColumn.DataPropertyName = "FK_Chip_ID";
+            this.fKChipIDDataGridViewTextBoxColumn.HeaderText = "ЧипID";
+            this.fKChipIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fKChipIDDataGridViewTextBoxColumn.Name = "fKChipIDDataGridViewTextBoxColumn";
+            this.fKChipIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // instructorDataGridViewTextBoxColumn
+            // 
+            this.instructorDataGridViewTextBoxColumn.DataPropertyName = "Instructor";
+            this.instructorDataGridViewTextBoxColumn.HeaderText = "Инструктор";
+            this.instructorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.instructorDataGridViewTextBoxColumn.Name = "instructorDataGridViewTextBoxColumn";
+            this.instructorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // sessionTypeDataGridViewTextBoxColumn
+            // 
+            this.sessionTypeDataGridViewTextBoxColumn.DataPropertyName = "SessionType";
+            this.sessionTypeDataGridViewTextBoxColumn.HeaderText = "ВидЗанятия";
+            this.sessionTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.sessionTypeDataGridViewTextBoxColumn.Name = "sessionTypeDataGridViewTextBoxColumn";
+            this.sessionTypeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // durationMinutesDataGridViewTextBoxColumn
+            // 
+            this.durationMinutesDataGridViewTextBoxColumn.DataPropertyName = "DurationMinutes";
+            this.durationMinutesDataGridViewTextBoxColumn.HeaderText = "ДлительностьМинут";
+            this.durationMinutesDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.durationMinutesDataGridViewTextBoxColumn.Name = "durationMinutesDataGridViewTextBoxColumn";
+            this.durationMinutesDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Оплата";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 150;
             // 
             // trainingSessionBindingSource
             // 
@@ -175,83 +247,11 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // chipIDDataGridViewTextBoxColumn
-            // 
-            this.chipIDDataGridViewTextBoxColumn.DataPropertyName = "Chip_ID";
-            this.chipIDDataGridViewTextBoxColumn.HeaderText = "ЧипID";
-            this.chipIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.chipIDDataGridViewTextBoxColumn.Name = "chipIDDataGridViewTextBoxColumn";
-            this.chipIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Кличка";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // breedDataGridViewTextBoxColumn
-            // 
-            this.breedDataGridViewTextBoxColumn.DataPropertyName = "Breed";
-            this.breedDataGridViewTextBoxColumn.HeaderText = "Порода";
-            this.breedDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.breedDataGridViewTextBoxColumn.Name = "breedDataGridViewTextBoxColumn";
-            this.breedDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // trainingIDDataGridViewTextBoxColumn
-            // 
-            this.trainingIDDataGridViewTextBoxColumn.DataPropertyName = "Training_ID";
-            this.trainingIDDataGridViewTextBoxColumn.HeaderText = "IDТренировки";
-            this.trainingIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.trainingIDDataGridViewTextBoxColumn.Name = "trainingIDDataGridViewTextBoxColumn";
-            this.trainingIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fKChipIDDataGridViewTextBoxColumn
-            // 
-            this.fKChipIDDataGridViewTextBoxColumn.DataPropertyName = "FK_Chip_ID";
-            this.fKChipIDDataGridViewTextBoxColumn.HeaderText = "ЧипID";
-            this.fKChipIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fKChipIDDataGridViewTextBoxColumn.Name = "fKChipIDDataGridViewTextBoxColumn";
-            this.fKChipIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // instructorDataGridViewTextBoxColumn
-            // 
-            this.instructorDataGridViewTextBoxColumn.DataPropertyName = "Instructor";
-            this.instructorDataGridViewTextBoxColumn.HeaderText = "Инструктор";
-            this.instructorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.instructorDataGridViewTextBoxColumn.Name = "instructorDataGridViewTextBoxColumn";
-            this.instructorDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // sessionTypeDataGridViewTextBoxColumn
-            // 
-            this.sessionTypeDataGridViewTextBoxColumn.DataPropertyName = "SessionType";
-            this.sessionTypeDataGridViewTextBoxColumn.HeaderText = "ВидЗанятия";
-            this.sessionTypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.sessionTypeDataGridViewTextBoxColumn.Name = "sessionTypeDataGridViewTextBoxColumn";
-            this.sessionTypeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // durationMinutesDataGridViewTextBoxColumn
-            // 
-            this.durationMinutesDataGridViewTextBoxColumn.DataPropertyName = "DurationMinutes";
-            this.durationMinutesDataGridViewTextBoxColumn.HeaderText = "ДлительностьМинут";
-            this.durationMinutesDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.durationMinutesDataGridViewTextBoxColumn.Name = "durationMinutesDataGridViewTextBoxColumn";
-            this.durationMinutesDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Оплата";
-            this.costDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 150;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 534);
+            this.ClientSize = new System.Drawing.Size(1334, 577);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -261,6 +261,8 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -298,4 +300,3 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
     }
 }
-

@@ -175,7 +175,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormTraining
             // 
@@ -195,6 +195,10 @@
             this.Controls.Add(this.comboBoxDog);
             this.Controls.Add(this.labelDog);
             this.Name = "FormTraining";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Text = "FormTraining";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCost)).EndInit();
