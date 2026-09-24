@@ -79,6 +79,8 @@
             this.textBoxInstructor.Name = "textBoxInstructor";
             this.textBoxInstructor.Size = new System.Drawing.Size(234, 22);
             this.textBoxInstructor.TabIndex = 3;
+            this.textBoxInstructor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxInstructor_KeyPress);
+            this.textBoxInstructor.TextChanged += new System.EventHandler(this.textBoxInstructor_TextChanged);
             // 
             // labelSessionType
             // 
