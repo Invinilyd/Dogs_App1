@@ -1,0 +1,9 @@
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\FormTraining.cs.csproj.AssemblyReference.cache
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\FormTraining.cs.csproj.GenerateResource.cache
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\FormTraining.cs.csproj.CoreCompileInputs.cache
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Azerty\source\repos\Invinilyd\Dogs_App1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

@@ -126,7 +126,7 @@
             this.durationMinutesDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.trainingSessionBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(180, 251);
+            this.dataGridView2.Location = new System.Drawing.Point(79, 244);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
@@ -191,7 +191,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(568, 81);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 100);
+            this.button1.Size = new System.Drawing.Size(167, 85);
             this.button1.TabIndex = 2;
             this.button1.Text = "Создать карточку собаки";
             this.button1.UseVisualStyleBackColor = true;
@@ -199,9 +199,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(787, 81);
+            this.button2.Location = new System.Drawing.Point(754, 81);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 100);
+            this.button2.Size = new System.Drawing.Size(147, 85);
             this.button2.TabIndex = 3;
             this.button2.Text = "Редактировать карточку собаки";
             this.button2.UseVisualStyleBackColor = true;
@@ -209,9 +209,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1005, 81);
+            this.button3.Location = new System.Drawing.Point(924, 81);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 100);
+            this.button3.Size = new System.Drawing.Size(157, 85);
             this.button3.TabIndex = 4;
             this.button3.Text = "Удалить карточку собаки";
             this.button3.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(190, 456);
+            this.button4.Location = new System.Drawing.Point(79, 443);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(243, 66);
             this.button4.TabIndex = 5;
@@ -229,7 +229,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(553, 456);
+            this.button5.Location = new System.Drawing.Point(458, 443);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(243, 66);
             this.button5.TabIndex = 6;
@@ -239,7 +239,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(919, 456);
+            this.button6.Location = new System.Drawing.Point(800, 443);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(243, 66);
             this.button6.TabIndex = 7;
@@ -251,7 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 577);
+            this.ClientSize = new System.Drawing.Size(1106, 534);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

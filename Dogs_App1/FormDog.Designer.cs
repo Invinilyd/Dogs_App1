@@ -98,6 +98,9 @@
             this.txtChipID.Name = "txtChipID";
             this.txtChipID.Size = new System.Drawing.Size(295, 29);
             this.txtChipID.TabIndex = 6;
+            this.txtChipID.MaxLength = 17;
+            this.txtChipID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChipID_KeyPress);
+            this.txtChipID.TextChanged += new System.EventHandler(this.txtChipID_TextChanged);
             // 
             // txtName
             // 
