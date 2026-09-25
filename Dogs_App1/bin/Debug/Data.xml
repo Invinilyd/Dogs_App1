@@ -47,9 +47,4 @@
       </xs:appinfo>
     </xs:annotation>
   </xs:schema>
-  <Dog>
-    <Chip_ID>вып</Chip_ID>
-    <Name>ып</Name>
-    <Breed>ыв</Breed>
-  </Dog>
 </DataSet1>

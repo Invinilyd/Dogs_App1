@@ -98,6 +98,9 @@
             this.txtChipID.Name = "txtChipID";
             this.txtChipID.Size = new System.Drawing.Size(295, 29);
             this.txtChipID.TabIndex = 6;
+            this.txtChipID.MaxLength = 17;
+            this.txtChipID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChipID_KeyPress);
+            this.txtChipID.TextChanged += new System.EventHandler(this.txtChipID_TextChanged);
             // 
             // txtName
             // 
@@ -107,6 +110,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(295, 29);
             this.txtName.TabIndex = 7;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtBreed
             // 
@@ -116,6 +121,8 @@
             this.txtBreed.Name = "txtBreed";
             this.txtBreed.Size = new System.Drawing.Size(295, 29);
             this.txtBreed.TabIndex = 8;
+            this.txtBreed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBreed_KeyPress);
+            this.txtBreed.TextChanged += new System.EventHandler(this.txtBreed_TextChanged);
             // 
             // FormDog
             // 
@@ -132,6 +139,10 @@
             this.Controls.Add(this.btnSave);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDog";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Text = "FormDog";
             this.Load += new System.EventHandler(this.FormDog_Load);
             this.ResumeLayout(false);
